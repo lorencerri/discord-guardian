@@ -1,0 +1,19 @@
+{
+  "name": "discord-guardian",
+  "version": "0.0.1",
+  "description": "Guardian, a purpose built anti-nuke Discord bot.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/plexidev/discord-guardian.git"
+  },
+  "author": "",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/plexidev/discord-guardian/issues"
+  },
+  "homepage": "https://github.com/plexidev/discord-guardian#readme"
+}
