@@ -7,8 +7,9 @@ class PingCommand extends Command {
         });
     }
 
-    exec(message) {
-        return message.reply('Pong!');
+    async exec(message) {
+        const sent = await message.channel.send('Calculating...');
+		return sent.edit(`Latency: **\`${sent.createdTimestamp - message.createdTimestamp}ms\`**`);
     }
 }
 
