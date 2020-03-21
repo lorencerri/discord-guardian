@@ -7,4 +7,4 @@ Guardian, a purpose built anti-nuke Discord bot.
 
 **1.** Add `BOT_TOKEN` & `POSTGRES_PASSWORD` to a .env file
 
-**2.** Configure Database: `node database/sync.js`
+**2.** Run `node database/sync.js` to configure the database
