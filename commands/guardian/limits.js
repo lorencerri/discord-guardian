@@ -5,7 +5,7 @@ const toProperCase = require('../../util/toProperCase.js');
 class LimitsCommand extends Command {
     constructor() {
         super('limits', {
-            aliases: ['limits'],
+            aliases: ['limits', 'limit'],
             args: [
                 {
                     id: 'index',
@@ -57,7 +57,7 @@ class LimitsCommand extends Command {
 
             embed.addField(toProperCase(k), `${minuteText}\n${hourText}`, true);
         }
-        
+
         message.channel.send(embed.addField('\u200B', '\u200B', true));
 
     }
