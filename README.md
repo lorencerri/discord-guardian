@@ -19,6 +19,6 @@ Guardian, a purpose built anti-nuke Discord bot.
 
 *You can mention the bot instead of using a prefix*
 
-**`g!prefix** [prefix]`** Displays the current prefix, changes the prefix if specified
+**`g!prefix [prefix]`** Displays the current prefix, changes the prefix if specified
 
-**`g!limits [index] [value]`** Displays the limits, changes index values if specified
+**`g!limits [index] [value]`** Displays the limits, changes an index's value if specified
