@@ -9,7 +9,10 @@ module.exports = class GuardianClient extends AkairoClient {
 
         this.commandHandler = new CommandHandler(this, {
             directory: path.join(__dirname, '..', 'commands/'),
-            prefix
+            prefix: message => {
+                if (message.guild) return this.settings.get(message.guild.id, 'prefix', 'g!');
+                return 'g!';
+            }
         });
 
         this.listenerHandler = new ListenerHandler(this, {
@@ -22,7 +25,8 @@ module.exports = class GuardianClient extends AkairoClient {
         this.commandHandler.loadAll();
         this.commandHandler.useListenerHandler(this.listenerHandler);
         this.listenerHandler.loadAll();
-        await database.init();
+        await database.init(this);
+        await this.settings.init()
         return super.login(token);
     }
 }
