@@ -23,7 +23,7 @@ class SetPrefixCommand extends Command {
         const oldPrefix = this.client.settings.get(message.guild.id, 'prefix', prefix);
 
         await this.client.settings.set(message.guild.id, 'prefix', args.prefix);
-        return message.send(`Successfully changed prefix from ${oldPrefix} to ${args.prefix}`);
+        return message.channel.send(`Successfully changed prefix from ${oldPrefix} to ${args.prefix}`);
     }
 }
 
