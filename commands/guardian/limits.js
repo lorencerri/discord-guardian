@@ -24,15 +24,12 @@ class LimitsCommand extends Command {
 
     async exec(message, args) {
 
-        // Declare embed
         const embed = this.client.util.embed();
 
-        // Check if the value argument was supplied
         if (args.value) {
             if (!message.member.hasPermission('ADMINISTRATOR')) embed.setDescription('*You don\'t have the **\`ADMINISTRATOR\`** permission to do that.*');
             else {
 
-                // Input Error Messages
                 if (args.index > 10 || args.index < 1) return message.channel.send('Index is not between 1-10.');
                 if (args.value > 30 || args.value < 1) return message.channel.send('Value is not between 1-30.');
 
@@ -45,13 +42,11 @@ class LimitsCommand extends Command {
             }
         }
 
-        // Create basic embed for listing current limits
         embed.setTitle(`Server Limits for ${message.guild.name}`)
             .setColor(0x7289DA)
             .setFooter("If any of the defined limits are met, all of the user's roles will be automatically removed.");
         if (!embed.description) embed.setDescription(`*You can do **\`${this.client.commandHandler.prefix(message)}limits index value\`** to update the limits.*`);
 
-        // Iterate through default limits to create a list of current limits
         var index = 1;
         for (var k in limits) {
             let minuteLimit = this.client.settings.get(message.guild.id, `${k}_minute`, limits[k].per_minute);
@@ -62,8 +57,7 @@ class LimitsCommand extends Command {
 
             embed.addField(toProperCase(k), `${minuteText}\n${hourText}`, true);
         }
-
-        // Send the list of current limits
+        
         message.channel.send(embed.addField('\u200B', '\u200B', true));
 
     }
