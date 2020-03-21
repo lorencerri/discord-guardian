@@ -1,5 +1,4 @@
 const { Command } = require('discord-akairo');
-const { defaultPrefix } = require('../config.js');
 
 class PrefixCommand extends Command {
     constructor() {
@@ -17,7 +16,7 @@ class PrefixCommand extends Command {
     async exec(message, args) {
 
         // Fetch the stored prefix
-        const prefix = this.client.settings.get(message.guild.id, 'prefix', defaultPrefix);
+        const prefix = this.client.settings.get(message.guild.id, 'prefix', this.client.commandHandler.prefix(message));
 
         // Return with the current prefix if none in arguments
         if (!args.prefix) return message.channel.send(`The prefix is currently ${prefix}`);

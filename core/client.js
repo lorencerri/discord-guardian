@@ -1,7 +1,7 @@
 const path = require('path');
 const { AkairoClient, CommandHandler, ListenerHandler } = require('discord-akairo');
 const database = require('../database/index.js');
-const { ownerID, prefix } = require('../config.js');
+const { ownerID, defaultPrefix } = require('../config.js');
 
 module.exports = class GuardianClient extends AkairoClient {
     constructor() {
@@ -10,9 +10,9 @@ module.exports = class GuardianClient extends AkairoClient {
         this.commandHandler = new CommandHandler(this, {
             directory: path.join(__dirname, '..', 'commands/'),
             prefix: message => {
-                if (message.guild) return this.settings.get(message.guild.id, 'prefix', prefix);
-                return prefix;
-            }
+                if (message.guild) return this.settings.get(message.guild.id, 'prefix', defaultPrefix);
+                return defaultPrefix;
+            },
         });
 
         this.listenerHandler = new ListenerHandler(this, {
