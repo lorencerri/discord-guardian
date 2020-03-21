@@ -10,8 +10,8 @@ module.exports = class GuardianClient extends AkairoClient {
         this.commandHandler = new CommandHandler(this, {
             directory: path.join(__dirname, '..', 'commands/'),
             prefix: message => {
-                if (message.guild) return this.settings.get(message.guild.id, 'prefix', 'g!');
-                return 'g!';
+                if (message.guild) return this.settings.get(message.guild.id, 'prefix', prefix);
+                return prefix;
             }
         });
 
