@@ -1,8 +1,6 @@
 const { Command } = require('discord-akairo');
 const { defaultPrefix } = require('../config.js');
 
-// Temporary file, testing database
-
 class PrefixCommand extends Command {
     constructor() {
         super('prefix', {
