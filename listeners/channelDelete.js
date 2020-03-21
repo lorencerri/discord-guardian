@@ -8,7 +8,7 @@ module.exports = class ChannelDeleteListener extends Listener {
         });
     }
 
-    exec(member) {
-        console.log(`Channel Deleted.`);
+    exec(channel) {
+        console.log(`Channel Created.`);
     }
 }
