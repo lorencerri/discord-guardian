@@ -24,3 +24,13 @@ Guardian, a purpose built anti-nuke Discord bot.
 **`g!limits [index] [value]`** Displays the limits, changes an index's value if specified
 
 ~~**g!recent** Displays recent moderation actions that can trigger the bot's limits~~ *TODO*
+
+#### Audit Log Check Implementation
+
+*For some reason, it takes the API up to 1000ms to update the audit logs.*
+
+**1.** Listener events add an entry to a queue.
+
+**2.** Queue handler checks the audit log for new entries (up to 10 times every 100ms). If a new entry is found, all entries in the queue associated with the type found are removed.
+
+**3.** When a new entry is added to the database, check if the limit is reached (for that type & user).
