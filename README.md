@@ -27,7 +27,7 @@ Guardian, a purpose built anti-nuke Discord bot.
 
 #### Audit Log Check Implementation
 
-*For some reason, it takes the API up to 1000ms to update the audit logs.*
+*For some reason, it takes the API up to 1000ms to update the audit logs after the action occurs.*
 
 **1.** Listener events add an entry to a queue.
 
