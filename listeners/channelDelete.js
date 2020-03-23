@@ -9,6 +9,6 @@ module.exports = class ChannelDeleteListener extends Listener {
     }
 
     exec(channel) {
-        console.log(`Channel Created.`);
+        this.client.queue.publish('audit-log', [this.client, 'channelDelete', channel.id, channel.guild.id]);
     }
 }

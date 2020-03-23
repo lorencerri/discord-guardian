@@ -2,6 +2,7 @@ const path = require('path');
 const { AkairoClient, CommandHandler, ListenerHandler } = require('discord-akairo');
 const database = require('../database/index.js');
 const { ownerID, defaultPrefix } = require('../config.js');
+const queue = require('./queue/index.js');
 
 module.exports = class GuardianClient extends AkairoClient {
     constructor() {
@@ -19,6 +20,8 @@ module.exports = class GuardianClient extends AkairoClient {
             directory: path.join(__dirname, '..', 'listeners/')
         });
 
+        this.queue = queue.init();
+
     }
 
     async login(token) {
@@ -26,7 +29,7 @@ module.exports = class GuardianClient extends AkairoClient {
         this.commandHandler.useListenerHandler(this.listenerHandler);
         this.listenerHandler.loadAll();
         await database.init(this);
-        await this.settings.init()
+        await this.settings.init();
         return super.login(token);
     }
 }

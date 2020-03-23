@@ -1,6 +1,10 @@
 # discord-guardian
 Guardian, a purpose built anti-nuke Discord bot.
 
+#### Features
+
+**Target Cooldown.** If a user gets banned or kicked, subsequent bans and kicks of the same target in the following 60 minutes will not count against any executor.
+
 #### Setup
 
 *Requires Node v12 for discord.js*
