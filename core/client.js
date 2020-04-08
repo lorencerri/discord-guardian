@@ -1,7 +1,6 @@
 const path = require('path');
 const { AkairoClient, CommandHandler, ListenerHandler } = require('discord-akairo');
 const { ownerID, defaultPrefix } = require('../config.js');
-const { Handler } = require('./handler.js');
 const db = require('quick.db');
 
 require('../structures/Guild.js');
@@ -23,7 +22,6 @@ module.exports = class GuardianClient extends AkairoClient {
         });
 
         this.db = db;
-        this.handler = new Handler(this);
 
     }
 
