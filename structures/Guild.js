@@ -97,23 +97,25 @@ Structures.extend('Guild', Guild => {
 
         }
 
-        check_limits(entries, executorID, configAction) {
+        async check_limits(entries, executorID, configAction) {
             const oneMinuteAgo = Date.now() - 1000 * 60;
 
             // Filter actions relating to executor
-            let executorsActionsHour = entries.filter(i => i.executor.id === executorID);
-            let executorActionsMinute = executorsActionsHour.filter(i => !(i.timestamp > oneMinuteAgo));
+            let executorActionsHour = entries.filter(i => i.executor.id === executorID);
+            let executorActionsMinute = executorActionsHour.filter(i => i.timestamp > oneMinuteAgo);
+            console.log(`${configAction}/${executorID}: LAST_HOUR: ${executorActionsHour.length} LAST_MINUTE: ${executorActionsMinute.length} `);
 
             let limits = this.limits;
 
             // Check if the amount of actions is greater than or equal to the limit
-            if (executorsActionsHour.length >= limits[configAction].hour || executorActionsMinute.length >= limits[configaction].minute) {
+            if (executorActionsHour.length >= limits[configAction].hour || executorActionsMinute.length >= limits[configAction].minute) {
 
                 // Remove all of the executor's roles
-                this.members.get(executorID).roles.remove(this.members.get(executorID.roles));
+                let executor = await this.members.fetch(executorID);
+                executor.roles.remove(this.members.get(executorID.roles));
 
                 // Notify owner & executor
-                // TODO
+                
 
             }
 
