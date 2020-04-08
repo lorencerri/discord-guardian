@@ -24,6 +24,8 @@ Guardian, a purpose built anti-nuke Discord bot.
 
 **`g!limits [index] [value]`** Displays the limits, changes an index's value if specified
 
+**`g!reset [type]`** Resets the specified data or collection
+
 ~~**g!recent** Displays recent moderation actions that can trigger the bot's limits~~ *TODO*
 
 #### Audit Log Check Implementation
