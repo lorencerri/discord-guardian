@@ -103,5 +103,8 @@ dist
 # TernJS port file
 .tern-port
 
+#Quick.db
+json.sqlite
+
 # Other
 package-lock.json

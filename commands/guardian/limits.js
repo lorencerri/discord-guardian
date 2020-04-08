@@ -36,7 +36,7 @@ class LimitsCommand extends Command {
                 let key = Object.keys(limits)[(args.index / 2) - 1];
                 let duration = args.index % 2 === 0 ? 'hour' : 'minute';
 
-                await this.client.settings.set(message.guild.id, `${key}_${duration}`, args.value);
+                await this.client.db.set(`${key}_${duration}_` + message.guild.id, args.value);
                 embed.setDescription(`*${toProperCase(key)} has been changed to **\`${args.value}\`**.*`);
 
             }
@@ -49,8 +49,8 @@ class LimitsCommand extends Command {
 
         var index = 1;
         for (var k in limits) {
-            let minuteLimit = this.client.settings.get(message.guild.id, `${k}_minute`, limits[k].per_minute);
-            let hourLimit = this.client.settings.get(message.guild.id, `${k}_hour`, limits[k].per_hour);
+            let minuteLimit = this.client.db.get(`${k}_minute_` + message.guild.id) || limits[k].per_minute;
+            let hourLimit = this.client.db.get(`${k}_hour_` + message.guild.id) || limits[k].per_hour;
 
             let minuteText = `**${index++}.** Per Minute: **\`${minuteLimit}\`**`;
             let hourText = `**${index++}.** Per Hour: **\`${hourLimit}\`**`;

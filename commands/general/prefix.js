@@ -16,7 +16,7 @@ class PrefixCommand extends Command {
     async exec(message, args) {
 
         // Fetch the stored prefix
-        const prefix = this.client.settings.get(message.guild.id, 'prefix', this.client.commandHandler.prefix(message));
+        const prefix = this.client.db.get(`prefix_${message.guild.id}`) || this.client.commandHandler.prefix(message);
 
         // Return with the current prefix if none in arguments
         if (!args.prefix) return message.channel.send(`The prefix is currently ${prefix}`);
@@ -28,7 +28,7 @@ class PrefixCommand extends Command {
         if (prefix === args.prefix) return message.channel.send('That is already the prefix.')
 
         // Update the prefix
-        await this.client.settings.set(message.guild.id, 'prefix', args.prefix);
+        await this.client.db.set(`prefix_${message.guild.id}`, args.prefix);
 
         // Return with the updated prefix
         return message.channel.send(`Successfully changed the prefix from **\`${prefix}\`** to **\`${args.prefix}\`**`);

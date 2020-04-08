@@ -1,8 +1,8 @@
 const path = require('path');
 const { AkairoClient, CommandHandler, ListenerHandler } = require('discord-akairo');
-const database = require('../database/index.js');
 const { ownerID, defaultPrefix } = require('../config.js');
 const queue = require('./queue/index.js');
+const db = require('quick.db');
 
 module.exports = class GuardianClient extends AkairoClient {
     constructor() {
@@ -11,7 +11,7 @@ module.exports = class GuardianClient extends AkairoClient {
         this.commandHandler = new CommandHandler(this, {
             directory: path.join(__dirname, '..', 'commands/'),
             prefix: message => {
-                if (message.guild) return this.settings.get(message.guild.id, 'prefix', defaultPrefix);
+                if (message.guild) return this.db.get('prefix_' + message.guild.id) || defaultPrefix;
                 return defaultPrefix;
             },
         });
@@ -21,6 +21,7 @@ module.exports = class GuardianClient extends AkairoClient {
         });
 
         this.queue = queue.init();
+        this.db = db;
 
     }
 
@@ -28,8 +29,6 @@ module.exports = class GuardianClient extends AkairoClient {
         this.commandHandler.loadAll();
         this.commandHandler.useListenerHandler(this.listenerHandler);
         this.listenerHandler.loadAll();
-        await database.init(this);
-        await this.settings.init();
         return super.login(token);
     }
 }
