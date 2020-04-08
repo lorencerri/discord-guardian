@@ -22,7 +22,7 @@ class Handler {
                     for (var e of entries)
                         if (!entry || e[0] > entry.id) entry = e[1];
 
-                    if (entries.size >= 1) return resolve(entry);
+                    if (entry) return resolve(entry);
 
                 }
 

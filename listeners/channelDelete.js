@@ -9,7 +9,7 @@ module.exports = class ChannelDeleteListener extends Listener {
     }
 
     async exec(channel) {
-        let response = await this.client.handler.find_entry(channel.guild, 'CHANNEL_DELETE', (e) => e.target.id === channel.id );
-        console.log(response);
+        let entry = await this.client.handler.find_entry(channel.guild, 'CHANNEL_DELETE', (e) => e.target.id === channel.id );
+        
     }
 }
