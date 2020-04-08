@@ -22,6 +22,7 @@
     "discord.js": "^12.0.2",
     "dotenv": "^8.2.0",
     "node-fetch": "^2.6.0",
+    "parse-ms": "^2.1.0",
     "path": "^0.12.7",
     "quick.db": "^7.0.0-b22",
     "sequelize": "^5.21.5"
