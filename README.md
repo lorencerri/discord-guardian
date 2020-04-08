@@ -14,7 +14,7 @@ Guardian, a purpose built anti-nuke Discord bot.
 
 **2.** Configure `config.js` to your personal preferences
 
-**4.** Run `npm start` to start the bot
+**3.** Run `npm start` to start the bot
 
 #### Commands
 
