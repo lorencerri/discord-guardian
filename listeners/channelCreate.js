@@ -9,6 +9,8 @@ module.exports = class ChannelCreateListener extends Listener {
     }
 
     async exec(channel) {
+        if (!channel.guild) return;
+
         // Fetch entry relating to action
         let entry = await channel.guild.find_entry('CHANNEL_CREATE', (e) => e.target.id === channel.id);
         if (!entry) return;
@@ -18,5 +20,6 @@ module.exports = class ChannelCreateListener extends Listener {
 
         // Check limits
         channel.guild.check_limits(entries, entry.executor.id, 'channel_creations');
+
     }
 }

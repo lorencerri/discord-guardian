@@ -9,6 +9,7 @@ module.exports = class ChannelDeleteListener extends Listener {
     }
 
     async exec(channel) {
+        if (!channel.guild) return;
 
         // Fetch entry relating to action
         let entry = await channel.guild.find_entry('CHANNEL_DELETE', (e) => e.target.id === channel.id);

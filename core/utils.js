@@ -28,6 +28,9 @@ module.exports = class Utils {
             case 'CHANNEL_CREATE':
                 return 'created channel'
                 break;
+            case 'MEMBER_BAN_ADD':
+                return 'banned'
+                break;
         }
     }
 

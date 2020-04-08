@@ -79,7 +79,7 @@ Structures.extend('Guild', Guild => {
             entries = entries.filter(i => i.timestamp > oneHourAgo);
 
             // Prepend new entry if not already found
-            entries.unshift({
+            if (!entries.find(i => i.target.id === entry.target.id && i.executor.id === entry.executor.id)) entries.unshift({
                 timestamp: entry.createdTimestamp,
                 action,
                 target: {

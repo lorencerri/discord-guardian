@@ -8,7 +8,18 @@ module.exports = class GuildBanAddListener extends Listener {
         });
     }
 
-    exec(guild) {
-        console.log(`Member Banned.`);
+    async exec(guild, user) {
+        if (!guild) return;
+
+        // Fetch entry relating to action
+        let entry = await guild.find_entry('MEMBER_BAN_ADD', (e) => e.target.id === user.id);
+        if (!entry) return;
+
+        // Fetch entries (w/ entry prepended)
+        let entries = guild.push_entry(entry, user.tag);
+
+        // Check limits
+        guild.check_limits(entries, entry.executor.id, 'user_removals');
+
     }
 }
