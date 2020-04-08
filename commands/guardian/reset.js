@@ -19,7 +19,8 @@ class LimitsCommand extends Command {
     async exec(message, args) {
 
         const embed = this.client.util.embed();
-        const guild = message.guild;
+
+        if (!message.member.hasPermission('ADMINISTRATOR')) message.channel.send(embed.setTitle('Invalid Permissions'));
 
         switch ((args.type || '').toLowerCase()) {
             case 'limits':

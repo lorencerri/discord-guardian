@@ -1,5 +1,4 @@
 const { Command } = require('discord-akairo');
-const { limits } = require('../../config.js');
 const toProperCase = require('../../util/toProperCase.js');
 
 class LimitsCommand extends Command {
@@ -34,7 +33,7 @@ class LimitsCommand extends Command {
                 if (args.index > 10 || args.index < 1) return message.channel.send('Index is not between 1-10.');
                 if (args.value > 30 || args.value < 1) return message.channel.send('Value is not between 1-30.');
 
-                let key = Object.keys(limits)[Math.ceil(args.index / 2) - 1];
+                let key = Object.keys(require('../../config.js').limits)[Math.ceil(args.index / 2) - 1];
                 let duration = args.index % 2 === 0 ? 'hour' : 'minute';
 
                 guild.set(`limits.${key}.${duration}`, args.value);
@@ -49,12 +48,11 @@ class LimitsCommand extends Command {
         if (!embed.description) embed.setDescription(`*You can do **\`${this.client.commandHandler.prefix(message)}limits index value\`** to update the limits.*\n*You can do **\`${this.client.commandHandler.prefix(message)}reset limits\`** to reset the limits.*`);
 
         var index = 1;
-        for (var k in limits) {
-            let minuteLimit = guild.get(`limits.${k}.minute`, limits[k].per_minute);
-            let hourLimit = guild.get(`limits.${k}.hour`, limits[k].per_hour);
+        var limits = guild.limits;
+        for (var k in l) {
 
-            let minuteText = `**${index++}.** Per Minute: **\`${minuteLimit}\`**`;
-            let hourText = `**${index++}.** Per Hour: **\`${hourLimit}\`**`;
+            let minuteText = `**${index++}.** Per Minute: **\`${limits[k].minute}\`**`;
+            let hourText = `**${index++}.** Per Hour: **\`${limits[k].hour}\`**`;
 
             embed.addField(toProperCase(k), `${minuteText}\n${hourText}`, true);
         }
