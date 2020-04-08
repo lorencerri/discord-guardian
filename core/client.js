@@ -2,7 +2,7 @@ const path = require('path');
 const { AkairoClient, CommandHandler, ListenerHandler } = require('discord-akairo');
 const { ownerID, defaultPrefix } = require('../config.js');
 const db = require('quick.db');
-const parsems = require('parse-ms');
+const Utils = require('./utils.js');
 
 require('../structures/Guild.js');
 
@@ -23,6 +23,7 @@ module.exports = class GuardianClient extends AkairoClient {
         });
 
         this.db = db;
+        this.Utils = new Utils(this);
 
     }
 

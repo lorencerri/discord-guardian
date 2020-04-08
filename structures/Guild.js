@@ -121,6 +121,14 @@ Structures.extend('Guild', Guild => {
 
         }
 
+        convertToEntry(entries) {
+            if (!(entry instanceof Array)) entries = [entries];
+            let str = '';
+            for (var i = 0; i < entries.length; i++) {
+                str += `${this.client.utils}`;
+            }
+        }
+
     }
 
     return GuildExt;

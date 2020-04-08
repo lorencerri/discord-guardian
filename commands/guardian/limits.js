@@ -1,5 +1,4 @@
 const { Command } = require('discord-akairo');
-const toProperCase = require('../../util/toProperCase.js');
 
 class LimitsCommand extends Command {
     constructor() {
@@ -37,7 +36,7 @@ class LimitsCommand extends Command {
                 let duration = args.index % 2 === 0 ? 'hour' : 'minute';
 
                 guild.set(`limits.${key}.${duration}`, args.value);
-                embed.setDescription(`*${toProperCase(key)} per ${duration} has been changed to **\`${args.value}\`**.*`);
+                embed.setDescription(`*${this.client.Utils.toProperCase(key)} per ${duration} has been changed to **\`${args.value}\`**.*`);
 
             }
         }
@@ -54,7 +53,7 @@ class LimitsCommand extends Command {
             let minuteText = `**${index++}.** Per Minute: **\`${limits[k].minute}\`**`;
             let hourText = `**${index++}.** Per Hour: **\`${limits[k].hour}\`**`;
 
-            embed.addField(toProperCase(k), `${minuteText}\n${hourText}`, true);
+            embed.addField(this.client.Utils.toProperCase(k), `${minuteText}\n${hourText}`, true);
         }
 
         message.channel.send(embed.addField('\u200B', '\u200B', true));
