@@ -17,7 +17,7 @@ module.exports = class GuildBanAddListener extends Listener {
 
         // Fetch entries (w/ entry prepended)
         let entries = guild.push_entry(entry, user.tag);
-        return;
+
         // Check limits
         guild.check_limits(entries, entry.executor.id, 'user_removals');
 
