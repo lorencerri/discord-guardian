@@ -3,8 +3,8 @@ const { limits } = require('../../config.js');
 
 class LimitsCommand extends Command {
     constructor() {
-        super('limits', {
-            aliases: ['limits', 'limit'],
+        super('reset', {
+            aliases: ['reset'],
             args: [
                 {
                     id: 'type',
@@ -23,11 +23,14 @@ class LimitsCommand extends Command {
 
         switch ((args.type || '').toLowerCase()) {
             case 'limits':
-
+                message.guild.delete('limits');
+                message.channel.send('Guild limits have been reset.');
                 break;
             default:
                 message.channel.send(embed.setTitle('Unknown Type'));
         }
+
+    }
 
 }
 

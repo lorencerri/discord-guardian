@@ -37,7 +37,7 @@ class LimitsCommand extends Command {
                 let key = Object.keys(limits)[Math.ceil(args.index / 2) - 1];
                 let duration = args.index % 2 === 0 ? 'hour' : 'minute';
 
-                guild.set(`${key}_${duration}`, args.value);
+                guild.set(`limits.${key}.${duration}`, args.value);
                 embed.setDescription(`*${toProperCase(key)} per ${duration} has been changed to **\`${args.value}\`**.*`);
 
             }
@@ -46,12 +46,12 @@ class LimitsCommand extends Command {
         embed.setTitle(`Server Limits for ${message.guild.name}`)
             .setColor(0x7289DA)
             .setFooter("If any of the defined limits are met, all of the user's roles will be automatically removed.");
-        if (!embed.description) embed.setDescription(`*You can do **\`${this.client.commandHandler.prefix(message)}limits index value\`** to update the limits.*\n*You can do **\`${this.client.commandHandler.prefix(message)}reset limits\`** to reset the limits.`);
+        if (!embed.description) embed.setDescription(`*You can do **\`${this.client.commandHandler.prefix(message)}limits index value\`** to update the limits.*\n*You can do **\`${this.client.commandHandler.prefix(message)}reset limits\`** to reset the limits.*`);
 
         var index = 1;
         for (var k in limits) {
-            let minuteLimit = guild.get(`${k}_minute`, limits[k].per_minute);
-            let hourLimit = guild.get(`${k}_hour`, limits[k].per_hour);
+            let minuteLimit = guild.get(`limits.${k}.minute`, limits[k].per_minute);
+            let hourLimit = guild.get(`limits.${k}.hour`, limits[k].per_hour);
 
             let minuteText = `**${index++}.** Per Minute: **\`${minuteLimit}\`**`;
             let hourText = `**${index++}.** Per Hour: **\`${hourLimit}\`**`;
