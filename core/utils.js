@@ -31,6 +31,9 @@ module.exports = class Utils {
             case 'MEMBER_BAN_ADD':
                 return 'banned'
                 break;
+            case 'MEMBER_KICK':
+                return 'kicked'
+                break;
         }
     }
 
