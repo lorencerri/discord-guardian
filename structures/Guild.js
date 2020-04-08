@@ -81,6 +81,7 @@ Structures.extend('Guild', Guild => {
             // Prepend new entry if not already found
             entries.unshift({
                 timestamp: entry.createdTimestamp,
+                action,
                 target: {
                     id: entry.target.id,
                     displayName,
@@ -107,26 +108,28 @@ Structures.extend('Guild', Guild => {
 
             let limits = this.limits;
 
+            let limitReached = null;
+            if (executorActionsHour.length >= limits[configAction].hour) limitReached = 'Hour';
+            if (executorActionsMinute.length >= limits[configAction].minute) limitReached = 'Minute';
+
             // Check if the amount of actions is greater than or equal to the limit
-            if (executorActionsHour.length >= limits[configAction].hour || executorActionsMinute.length >= limits[configAction].minute) {
+            if (limitReached) {
 
                 // Remove all of the executor's roles
                 let executor = await this.members.fetch(executorID);
-                executor.roles.remove(this.members.get(executorID.roles));
+                executor.roles.remove(executor.roles.cache);
 
                 // Notify owner & executor
-                
+                const embed = this.client.util.embed()
+                    .setTitle(`Limit Reached - ${limitReached}`)
+                    .setDescription(this.client.Utils.convertEntries(limitReached === 'Hour' ? executorActionsHour : executorActionsMinute))
+                    .setColor(0x7289DA);
+
+                this.owner.send(embed.setFooter('This message was sent to you because you\'re the Guild owner.'));
+                executor.send(embed.setFooter('This message was sent to you because you were the executor.'));
 
             }
 
-        }
-
-        convertToEntry(entries) {
-            if (!(entry instanceof Array)) entries = [entries];
-            let str = '';
-            for (var i = 0; i < entries.length; i++) {
-                str += `${this.client.utils}`;
-            }
         }
 
     }

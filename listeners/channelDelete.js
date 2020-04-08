@@ -15,7 +15,7 @@ module.exports = class ChannelDeleteListener extends Listener {
         if (!entry) return;
 
         // Fetch entries (w/ entry prepended)
-        let entries = channel.guild.push_entry(entry, channel.name);
+        let entries = channel.guild.push_entry(entry, `#${channel.name}`);
 
         // Check limits
         channel.guild.check_limits(entries, entry.executor.id, 'channel_deletions');

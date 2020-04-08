@@ -48,7 +48,7 @@ class LimitsCommand extends Command {
 
         var index = 1;
         var limits = guild.limits;
-        for (var k in l) {
+        for (var k in limits) {
 
             let minuteText = `**${index++}.** Per Minute: **\`${limits[k].minute}\`**`;
             let hourText = `**${index++}.** Per Hour: **\`${limits[k].hour}\`**`;

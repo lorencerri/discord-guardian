@@ -20,4 +20,19 @@ module.exports = class Utils {
         return (!base ? 'Just now' : base + 'ago');
     }
 
+    convertActionType(type) {
+        switch (type) {
+            case 'CHANNEL_DELETE':
+                return 'deleted channel'
+                break;
+        }
+    }
+
+    convertEntries(entries) {
+        if (!(entries instanceof Array)) entries = [entries];
+        let str = '';
+        for (var i = 0; i < entries.length; i++) str += `\`${this.client.Utils.parseTime(entries[i].timestamp)}\` | <@${entries[i].executor.id}> ${this.convertActionType(entries[i].action)} **${entries[i].target.displayName}**\n`;
+        return str;
+    }
+
 }
