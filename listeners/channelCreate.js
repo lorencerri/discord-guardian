@@ -9,6 +9,6 @@ module.exports = class ChannelCreateListener extends Listener {
     }
 
     exec(channel) {
-        console.log(`Channel Deleted.`);
+        console.log(`Channel Created.`);
     }
 }

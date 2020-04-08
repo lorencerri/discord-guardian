@@ -8,7 +8,8 @@ module.exports = class ChannelDeleteListener extends Listener {
         });
     }
 
-    exec(channel) {
-        this.client.queue.publish('audit-log', [this.client, 'channelDelete', channel.id, channel.guild.id]);
+    async exec(channel) {
+        let response = await this.client.handler.find_entry(channel.guild, 'CHANNEL_DELETE', (e) => e.target.id === channel.id );
+        console.log(response);
     }
 }

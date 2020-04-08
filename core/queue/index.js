@@ -1,22 +1,37 @@
-var doesEntryExist = require('../../util/doesEntryExist.js');
+class Handler {
+    constructor(client) {
+        this.client = client;
+        this.queue = [];
+    }
 
-async function handleAuditEntries(input, cb) {
-    console.log(`[Audit Log Search] Searching for ${input[1]} of ${input[2]} in ${input[3]}...`);
+    find_entry(guild, action, filter) {
+        return new Promise((resolve) => {
+            (async function search(iter) {
+                console.log(`ACTION = ${action} | ITER = ${iter}`);
 
-    // Check if entry currently looking for is already in the database
-    // NOTE: Two database types. After 60 minutes of being added to a temporary type, it'll be moved to permanaent, slower, storage.
-    let exists = await doesEntryExist(...input);
-    console.log(`Already exists? ${exists}`);
+                if (!guild.me) return resolve(null);
 
-    // Fetch Audit Log
+                if (guild.me.hasPermission('VIEW_AUDIT_LOG')) {
 
-    // Check if new entry is in the audit log
+                    let logs = await guild.fetchAuditLogs({ limit: 10, type: action });
+                    let entries = logs.entries;
+                    let entry = null;
 
-    // If None Found
-    throw new Error(`${input[1]} of ${input[2]} in ${input[3]} not found`);
+                    entries = entries.filter(filter);
+
+                    for (var e of entries)
+                        if (!entry || e[0] > entry.id) entry = e[1];
+
+                    if (entries.size >= 1) return resolve(entry);
+
+                }
+
+                if (++iter === 5) return resolve(null);
+                else return setTimeout(search, 200, iter);
+            })(0)
+        })
+    }
 
 }
 
-module.exports.init = async() => {
-
-}
+module.exports = { Handler };
