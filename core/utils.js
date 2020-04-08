@@ -25,6 +25,9 @@ module.exports = class Utils {
             case 'CHANNEL_DELETE':
                 return 'deleted channel'
                 break;
+            case 'CHANNEL_CREATE':
+                return 'created channel'
+                break;
         }
     }
 

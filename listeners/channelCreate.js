@@ -8,7 +8,15 @@ module.exports = class ChannelCreateListener extends Listener {
         });
     }
 
-    exec(channel) {
-        console.log(`Channel Created.`);
+    async exec(channel) {
+        // Fetch entry relating to action
+        let entry = await channel.guild.find_entry('CHANNEL_CREATE', (e) => e.target.id === channel.id);
+        if (!entry) return;
+
+        // Fetch entries (w/ entry prepended)
+        let entries = channel.guild.push_entry(entry, `${channel.id}`);
+
+        // Check limits
+        channel.guild.check_limits(entries, entry.executor.id, 'channel_creations');
     }
 }
