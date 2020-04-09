@@ -115,9 +115,12 @@ Structures.extend('Guild', Guild => {
         }
 
         async check_limits(entries, executorID, configAction) {
-            const oneMinuteAgo = Date.now() - 1000 * 60;
+
+            // Ignore if executor is the owner
+            if (executorID === this.ownerID) return;
 
             // Filter actions relating to executor
+            const oneMinuteAgo = Date.now() - 1000 * 60;
             let executorActionsHour = entries.filter(i => i.executor.id === executorID);
             let executorActionsMinute = executorActionsHour.filter(i => i.timestamp > oneMinuteAgo);
             console.log(`${configAction}/${executorID}: LAST_HOUR: ${executorActionsHour.length} LAST_MINUTE: ${executorActionsMinute.length} `);
