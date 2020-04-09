@@ -18,9 +18,8 @@ class ResetCommand extends Command {
 
     async exec(message, args) {
 
-        const embed = this.client.util.embed();
 
-        if (!message.member.hasPermission('ADMINISTRATOR')) message.channel.send(embed.setTitle('Invalid Permissions'));
+        if (!message.member.hasPermission('ADMINISTRATOR')) message.channel.send('***Sorry**, invalid permissions.*');
 
         switch ((args.type || '').toLowerCase()) {
             case 'limits':
@@ -28,7 +27,7 @@ class ResetCommand extends Command {
                 message.channel.send('Guild limits have been reset.');
                 break;
             default:
-                message.channel.send(embed.setTitle('Unknown Type'));
+                message.channel.send(`***Unknown type**, the following types are available: **\`limits\`***\n**\`Usage: ${this.client.commandHandler.prefix(message)}reset <type>\`**`);
         }
 
     }
