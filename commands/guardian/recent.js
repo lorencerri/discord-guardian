@@ -18,7 +18,7 @@ class RecentCommand extends Command {
 
     async exec(message, args) {
 
-        let lines = [`*You can do **\`${this.client.commandHandler.prefix(message)}recent <ID>\`** to view all actions relating to a user.*`]
+        let lines = [`*You can do **\`${message.guild.prefix}recent <ID>\`** to view all actions relating to a user.*`]
 
         const embed = this.client.util.embed()
             .setColor(0x7289DA)

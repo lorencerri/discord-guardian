@@ -12,10 +12,7 @@ module.exports = class GuardianClient extends AkairoClient {
 
         this.commandHandler = new CommandHandler(this, {
             directory: path.join(__dirname, '..', 'commands/'),
-            prefix: message => {
-                if (message.guild) return message.guild.get('prefix', defaultPrefix);
-                return defaultPrefix;
-            },
+            prefix: message => message.guild ? message.guild.prefix : defaultPrefix
         });
 
         this.listenerHandler = new ListenerHandler(this, {

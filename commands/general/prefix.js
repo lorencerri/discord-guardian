@@ -16,7 +16,7 @@ class PrefixCommand extends Command {
     async exec(message, args) {
 
         // Fetch the stored prefix
-        const prefix = message.guild.get(`prefix`, this.client.commandHandler.prefix(message));
+        const prefix = message.guild.prefix;
 
         // Return with the current prefix if none in arguments
         if (!args.prefix) return message.channel.send(`*The prefix is currently **\`${prefix}\`***\n*You can change it by doing **\`${prefix}prefix <prefix>\`***`);

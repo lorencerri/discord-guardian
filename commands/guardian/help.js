@@ -8,17 +8,13 @@ class HelpCommand extends Command {
         });
     }
 
-    newLine(content, tabs = 0) {
-
-    }
-
-    async exec(message, args) {
+    async exec(message) {
 
         const embed = this.client.util.embed().setColor(0x7289DA).setTitle('Guardian');
-        const prefix = this.client.commandHandler.prefix(message);
+        const prefix = message.guild.prefix;
 
         const commands = [`*The prefix is currently **\`${prefix}\`***\n`,
-                          `*The following commands are available, running them displays more information and parameters:* **\`prefix\` \`help\` \`limits\` \`recent\` \`reset\`**`,
+                          `*The following commands are available, running them displays more information and parameters:* **\`config\` \`prefix\` \`help\` \`limits\` \`recent\` \`reset\`**`,
         ];
 
         const info = [`**[GitHub](https://github.com/plexidev/discord-guardian)**`, `**[Support Server](https://discord.gg/plexidev)**`];
