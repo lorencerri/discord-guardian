@@ -20,7 +20,7 @@ module.exports = class Utils {
         return (!base ? 'Just now' : base + 'ago');
     }
 
-    convertActionType(type) {
+    convertActionTypeToDescription(type) {
         switch (type) {
             case 'CHANNEL_DELETE':
                 return 'deleted channel'
@@ -34,6 +34,9 @@ module.exports = class Utils {
             case 'MEMBER_KICK':
                 return 'kicked'
                 break;
+            case 'MEMBER_REMOVE':
+                return 'removed'
+                break;
             case 'ROLE_CREATE':
                 return 'created role'
                 break;
@@ -43,10 +46,31 @@ module.exports = class Utils {
         }
     }
 
+    convertLimitNameToActionType(limit) {
+        console.log(limit)
+        switch (limit) {
+            case 'user_removals':
+                return 'MEMBER_REMOVE'
+                break;
+            case 'role_creations':
+                return 'ROLE_CREATE'
+                break;
+            case 'channel_creations':
+                return 'CHANNEL_CREATE'
+                break;
+            case 'role_deletions':
+                return 'ROLE_DELETE'
+                break;
+            case 'channel_deletions':
+                return 'CHANNEL_DELETE'
+                break;
+        }
+    }
+
     convertEntries(entries) {
         if (!(entries instanceof Array)) entries = [entries];
         let str = '';
-        for (var i = 0; i < entries.length; i++) str += `\`${this.client.Utils.parseTime(entries[i].timestamp)}\` | <@${entries[i].executor.id}> ${this.convertActionType(entries[i].action)} **${entries[i].target.displayName}**\n`;
+        for (var i = 0; i < entries.length; i++) str += `\`${this.client.Utils.parseTime(entries[i].timestamp)}\` | <@${entries[i].executor.id}> ${this.convertActionTypeToDescription(entries[i].action)} **${entries[i].target.displayName}**\n`;
         return str;
     }
 

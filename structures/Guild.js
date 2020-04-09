@@ -33,6 +33,17 @@ Structures.extend('Guild', Guild => {
             return obj;
         }
 
+        getActions(limit = 10) {
+            var obj = {};
+            for (var k in limits) {
+                obj[k] = {
+                    name: this.client.Utils.toProperCase(k),
+                    actions: this.client.Utils.convertEntries(this.get(this.client.Utils.convertLimitNameToActionType(k), []).slice(0, 10))
+                }
+            }
+            return obj;
+        }
+
         find_entry(action, filter) {
             let guild = this;
             return new Promise((resolve) => {
@@ -63,7 +74,7 @@ Structures.extend('Guild', Guild => {
         }
 
         push_entry(entry, displayName) {
-            const action = entry.action;
+            const action = ['MEMBER_KICK', 'MEMBER_BAN'].includes(entry.action) ? 'MEMBER_REMOVE' : entry.action;
             const oneHourAgo = Date.now() - 1000 * 60 * 60;
 
             // Fetch Entries for a sepcific action (Last Hour)
@@ -81,7 +92,7 @@ Structures.extend('Guild', Guild => {
             // Prepend new entry if not already found
             if (!entries.find(i => i.target.id === entry.target.id && i.executor.id === entry.executor.id)) entries.unshift({
                 timestamp: entry.createdTimestamp,
-                action,
+                action: entry.action,
                 target: {
                     id: entry.target.id,
                     displayName,

@@ -1,7 +1,7 @@
 const { Command } = require('discord-akairo');
 const { limits } = require('../../config.js');
 
-class LimitsCommand extends Command {
+class ResetCommand extends Command {
     constructor() {
         super('reset', {
             aliases: ['reset'],
@@ -35,4 +35,4 @@ class LimitsCommand extends Command {
 
 }
 
-module.exports = LimitsCommand;
+module.exports = ResetCommand;
