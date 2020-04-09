@@ -53,7 +53,7 @@ Structures.extend('Guild', Guild => {
             let guild = this;
             return new Promise((resolve) => {
                 (async function search(iter) {
-                    console.log(`ACTION = ${action} | ITER = ${iter}`);
+                    //console.log(`ACTION = ${action} | ITER = ${iter}`);
 
                     if (!guild.me) return resolve(null);
 
@@ -81,7 +81,7 @@ Structures.extend('Guild', Guild => {
         push_entry(entry, displayName) {
             const action = ['MEMBER_KICK', 'MEMBER_BAN_ADD'].includes(entry.action) ? 'MEMBER_REMOVE' : entry.action;
             const oneHourAgo = Date.now() - 1000 * 60 * 60;
-            console.log(entry, action)
+
             // Fetch Entries for a sepcific action (Last Hour)
             let entries = this.get(action, []);
 

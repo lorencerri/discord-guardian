@@ -13,7 +13,6 @@ module.exports = class GuildMemberRemoveListener extends Listener {
 
         // Fetch entry relating to action
         let entry = await member.guild.find_entry('MEMBER_KICK', (e) => e.target.id === member.id && e.createdTimestamp > Date.now() - 1000 * 60);
-        console.log(entry)
         if (!entry) return;
 
         // Fetch entries (w/ entry prepended)
