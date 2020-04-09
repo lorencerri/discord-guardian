@@ -1,5 +1,4 @@
 const { Command } = require('discord-akairo');
-const { limits } = require('../../config.js');
 
 class RecentCommand extends Command {
     constructor() {
