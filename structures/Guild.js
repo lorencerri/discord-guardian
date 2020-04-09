@@ -33,12 +33,12 @@ Structures.extend('Guild', Guild => {
             return obj;
         }
 
-        getActions(limit = 10) {
+        getActions(filter = () => true) {
             var obj = {};
             for (var k in limits) {
                 obj[k] = {
                     name: this.client.Utils.toProperCase(k),
-                    actions: this.client.Utils.convertEntries(this.get(this.client.Utils.convertLimitNameToActionType(k), []).slice(0, 10))
+                    actions: this.client.Utils.convertEntries([...this.get(this.client.Utils.convertLimitNameToActionType(k), []), ...this.get(`archive.${this.client.Utils.convertLimitNameToActionType(k)}`, [])].filter(filter).slice(0, 10))
                 }
             }
             return obj;
