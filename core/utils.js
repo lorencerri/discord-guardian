@@ -43,6 +43,9 @@ module.exports = class Utils {
             case 'ROLE_DELETE':
                 return 'deleted role'
                 break;
+            case 'MEMBER_BAN_REMOVE':
+                return 'unbanned'
+                break;
         }
     }
 
@@ -62,6 +65,9 @@ module.exports = class Utils {
                 break;
             case 'channel_deletions':
                 return 'CHANNEL_DELETE'
+                break;
+            case 'unbans':
+                return 'MEMBER_BAN_REMOVE'
                 break;
         }
     }

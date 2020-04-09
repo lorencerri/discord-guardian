@@ -22,6 +22,10 @@ module.exports = {
         channel_deletions: {
             per_minute: 4,
             per_hour: 12
+        },
+        unbans: {
+            per_minute: 8,
+            per_hour: 24
         }
     },
     _config: 'The following are defaults.',

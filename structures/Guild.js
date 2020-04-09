@@ -141,8 +141,8 @@ Structures.extend('Guild', Guild => {
                     .setDescription(this.client.Utils.convertEntries(limitReached === 'Hour' ? executorActionsHour : executorActionsMinute))
                     .setColor(0x7289DA);
 
-                this.owner.send(embed.setFooter('This message was sent to you because you\'re the Guild owner.'));
-                executor.send(embed.setFooter('This message was sent to you because you were the executor.'));
+                await this.owner.send(embed.setFooter('This message was sent to you because you\'re the Guild owner.'));
+                await executor.send(embed.setFooter('This message was sent to you because you were the executor.'));
 
             }
 

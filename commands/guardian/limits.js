@@ -29,7 +29,7 @@ class LimitsCommand extends Command {
             if (!message.member.hasPermission('ADMINISTRATOR')) embed.setDescription('*You don\'t have the **\`ADMINISTRATOR\`** permission to do that.*');
             else {
 
-                if (args.index > 10 || args.index < 1) return message.channel.send('Index is not between 1-10.');
+                if (args.index > 12 || args.index < 1) return message.channel.send('Index is not between 1-12.');
                 if (args.value > 30 || args.value < 1) return message.channel.send('Value is not between 1-30.');
 
                 let key = Object.keys(require('../../config.js').limits)[Math.ceil(args.index / 2) - 1];
@@ -56,7 +56,7 @@ class LimitsCommand extends Command {
             embed.addField(this.client.Utils.toProperCase(k), `${minuteText}\n${hourText}`, true);
         }
 
-        message.channel.send(embed.addField('\u200B', '\u200B', true));
+        message.channel.send(embed);
 
     }
 }
