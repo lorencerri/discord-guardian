@@ -15,6 +15,8 @@ Guardian allows server owners to set strict limits on administration actions. Th
 
 **3.** Run `npm start` to start the bot
 
+**4.** Ensure the highest role the bot has is higher than others so it can remove their roles
+
 #### Commands
 
 *You can mention the bot instead of using a prefix*
@@ -29,6 +31,11 @@ Guardian allows server owners to set strict limits on administration actions. Th
 
 #### Example Images
 
-*> g!limits command* <br>
+*g!limits command* <br>
 ![](https://i.plexidev.org/w05p)
 
+*Image of a limit reached notification* <br>
+![](https://i.plexidev.org/gVYq)
+
+*g!recent command* <br>
+![](https://i.plexidev.org/nfMD)
