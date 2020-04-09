@@ -39,6 +39,7 @@ Structures.extend('Guild', Guild => {
 
         getActions(filter = () => true) {
             var obj = {};
+            var l = limits;
             for (var k in limits) {
                 obj[k] = {
                     name: this.client.Utils.toProperCase(k),
@@ -78,9 +79,9 @@ Structures.extend('Guild', Guild => {
         }
 
         push_entry(entry, displayName) {
-            const action = ['MEMBER_KICK', 'MEMBER_BAN'].includes(entry.action) ? 'MEMBER_REMOVE' : entry.action;
+            const action = ['MEMBER_KICK', 'MEMBER_BAN_ADD'].includes(entry.action) ? 'MEMBER_REMOVE' : entry.action;
             const oneHourAgo = Date.now() - 1000 * 60 * 60;
-
+            console.log(entry, action)
             // Fetch Entries for a sepcific action (Last Hour)
             let entries = this.get(action, []);
 
