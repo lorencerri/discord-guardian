@@ -23,5 +23,9 @@ module.exports = {
             per_minute: 4,
             per_hour: 12
         }
+    },
+    _config: 'The following are defaults.',
+    config: {
+        _null: 'No options to configure currently.'
     }
 }

@@ -44,7 +44,7 @@ class LimitsCommand extends Command {
         embed.setTitle(`Server Limits for ${message.guild.name}`)
             .setColor(0x7289DA)
             .setFooter("If any of the defined limits are met, all of the user's roles will be automatically removed.");
-        if (!embed.description) embed.setDescription(`***\`${message.guild.prefix}limits <index> <value>\`** to update the limits.*\n***\`${message.guild.prefix}reset limits\`** to reset the limits.*\n***\`${message.guild.prefix}config\`** for additional options.*`);
+        if (!embed.description) embed.setDescription(`***\`${message.guild.prefix}limits <index> <value>\`** to update the limits.*\n***\`${message.guild.prefix}reset limits\`** to reset the limits.*`);
 
         var index = 1;
         var limits = guild.limits;
