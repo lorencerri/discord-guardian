@@ -1,8 +1,6 @@
 # Guardian
 Guardian, a purpose built anti-nuke Discord bot.
 
-Support Server: https://discord.gg/plexidev
-
 ### How Guardian Works
 
 Guardian allows server owners to set strict limits on administration actions. These actions include: bans, kicks, channel creations/deletions, and role creations/deletions. Once these limits are met, their Discord permissions are automatically revoked via removing all of their roles.
