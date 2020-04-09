@@ -47,7 +47,6 @@ module.exports = class Utils {
     }
 
     convertLimitNameToActionType(limit) {
-        console.log(limit)
         switch (limit) {
             case 'user_removals':
                 return 'MEMBER_REMOVE'

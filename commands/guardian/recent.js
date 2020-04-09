@@ -11,14 +11,14 @@ class RecentCommand extends Command {
 
 
 
-    async exec(message, args) {
+    async exec(message) {
 
         const embed = this.client.util.embed()
             .setColor(0x7289DA)
             .setTitle(`Recent Actions in ${message.guild.name}`);
 
         let actions = message.guild.getActions();
-        for (var k in actions) embed.addField(actions[k].name, actions[k].actions);
+        for (var k in actions) embed.addField(`${actions[k].name} (${(actions[k].actions || '').split('\n').length - 1})`, actions[k].actions || 'No entries.');
   
         message.channel.send(embed);
 
