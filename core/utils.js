@@ -34,6 +34,12 @@ module.exports = class Utils {
             case 'MEMBER_KICK':
                 return 'kicked'
                 break;
+            case 'ROLE_CREATE':
+                return 'created role'
+                break;
+            case 'ROLE_DELETE':
+                return 'deleted role'
+                break;
         }
     }
 
