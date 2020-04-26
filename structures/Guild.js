@@ -60,7 +60,7 @@ Structures.extend('Guild', Guild => {
                             )
                         ]
                             .filter(filter)
-                            .slice(0, 10)
+                            .slice(0, limit)
                     )
                 };
             }

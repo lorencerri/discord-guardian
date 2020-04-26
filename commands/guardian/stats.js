@@ -31,9 +31,9 @@ class StatsCommand extends Command {
         let description = '';
 
         for (var k in actions)
-            description += `${actions[k].name}: ${
+            description += `**${actions[k].name}: \`${
                 (actions[k].actions || '').split('\n').length - 1
-            }`;
+            }\`**\n`;
 
         message.channel.send(
             embed.setDescription(
