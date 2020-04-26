@@ -17,7 +17,11 @@ class RecentCommand extends Command {
         const embed = this.client.util
             .embed()
             .setColor(0x7289da)
-            .setTitle(`Recent Actions in ${message.guild.name}`)
+            .setTitle(
+                `Recent Actions in ${message.guild.name} ${
+                    args.ID && `by ${this.client.users.cache.get(args.ID).tag}`
+                }`
+            )
             .setDescription(
                 `*You can do **\`${message.guild.prefix}recent <ID>\`** to view all actions relating to a user.*`
             );

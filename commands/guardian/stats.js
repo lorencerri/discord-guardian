@@ -17,7 +17,11 @@ class StatsCommand extends Command {
         const embed = this.client.util
             .embed()
             .setColor(0x7289da)
-            .setTitle(`Statistics for ${message.guild.name}`);
+            .setTitle(
+                `Statistics for ${message.guild.name} ${
+                    args.ID && `by ${this.client.users.cache.get(args.ID).tag}`
+                }`
+            );
 
         let actions = message.guild.getActions(
             10000,
