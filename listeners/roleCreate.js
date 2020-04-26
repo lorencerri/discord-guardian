@@ -12,7 +12,12 @@ module.exports = class RoleCreateListener extends Listener {
         if (!role.guild) return;
 
         // Fetch entry relating to action
-        let entry = await role.guild.find_entry('ROLE_CREATE', (e) => e.target.id === role.id && e.createdTimestamp > Date.now() - 1000 * 60);
+        let entry = await role.guild.find_entry(
+            'ROLE_CREATE',
+            e =>
+                e.target.id === role.id &&
+                e.createdTimestamp > Date.now() - 1000 * 60
+        );
         if (!entry) return;
 
         // Fetch entries (w/ entry prepended)
@@ -21,4 +26,4 @@ module.exports = class RoleCreateListener extends Listener {
         // Check limits
         role.guild.check_limits(entries, entry.executor.id, 'role_creations');
     }
-}
+};

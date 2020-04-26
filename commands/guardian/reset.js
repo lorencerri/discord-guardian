@@ -7,19 +7,16 @@ class ResetCommand extends Command {
             aliases: ['reset'],
             args: [
                 {
-                    id: 'type',
-                },
+                    id: 'type'
+                }
             ],
             channel: 'guild'
         });
     }
 
-
-
     async exec(message, args) {
-
-
-        if (!message.member.hasPermission('ADMINISTRATOR')) message.channel.send('***Sorry**, invalid permissions.*');
+        if (!message.member.hasPermission('ADMINISTRATOR'))
+            message.channel.send('***Sorry**, invalid permissions.*');
 
         switch ((args.type || '').toLowerCase()) {
             case 'limits':
@@ -27,11 +24,11 @@ class ResetCommand extends Command {
                 message.channel.send('Guild limits have been reset.');
                 break;
             default:
-                message.channel.send(`***Unknown type**, the following types are available: **\`limits\`***\n**\`Usage: ${message.guild.prefix}reset <type>\`**`);
+                message.channel.send(
+                    `***Unknown type**, the following types are available: **\`limits\`***\n**\`Usage: ${message.guild.prefix}reset <type>\`**`
+                );
         }
-
     }
-
 }
 
 module.exports = ResetCommand;

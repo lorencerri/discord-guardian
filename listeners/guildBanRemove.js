@@ -12,7 +12,12 @@ module.exports = class GuildBanRemoveListener extends Listener {
         if (!guild) return;
 
         // Fetch entry relating to action
-        let entry = await guild.find_entry('MEMBER_BAN_REMOVE', (e) => e.target.id === user.id && e.createdTimestamp > Date.now() - 1000 * 60);
+        let entry = await guild.find_entry(
+            'MEMBER_BAN_REMOVE',
+            e =>
+                e.target.id === user.id &&
+                e.createdTimestamp > Date.now() - 1000 * 60
+        );
         if (!entry) return;
 
         // Fetch entries (w/ entry prepended)
@@ -20,6 +25,5 @@ module.exports = class GuildBanRemoveListener extends Listener {
 
         // Check limits
         guild.check_limits(entries, entry.executor.id, 'unbans');
-
     }
-}
+};

@@ -1,4 +1,5 @@
 # Guardian
+
 Guardian, a purpose built anti-nuke Discord bot.
 
 ---
@@ -11,7 +12,7 @@ Guardian allows server owners to set strict limits on administration actions. Th
 
 #### Setup
 
-*Requires Node v12 for discord.js*
+_Requires Node v12 for discord.js_
 
 **1.** Add `BOT_TOKEN` property to a .env file
 
@@ -25,7 +26,7 @@ Guardian allows server owners to set strict limits on administration actions. Th
 
 #### Commands
 
-*You can mention the bot instead of using a prefix*
+_You can mention the bot instead of using a prefix_
 
 **`g!prefix [prefix]`** Displays the current prefix, changes the prefix if specified
 
@@ -39,11 +40,11 @@ Guardian allows server owners to set strict limits on administration actions. Th
 
 #### Example Images
 
-*g!limits command* <br>
+_g!limits command_ <br>
 ![](https://i.plexidev.org/w05p)
 
-*Image of a limit reached notification* <br>
+_Image of a limit reached notification_ <br>
 ![](https://i.plexidev.org/gVYq)
 
-*g!recent command* <br>
+_g!recent command_ <br>
 ![](https://i.plexidev.org/nfMD)

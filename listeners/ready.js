@@ -11,4 +11,4 @@ module.exports = class ReadyListener extends Listener {
     exec() {
         console.log(`[Client] ${this.client.user.tag} is ready!`);
     }
-}
+};

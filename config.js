@@ -32,4 +32,4 @@ module.exports = {
     config: {
         _null: 'No options to configure currently.'
     }
-}
+};

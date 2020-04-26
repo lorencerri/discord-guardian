@@ -12,7 +12,12 @@ module.exports = class GuildMemberRemoveListener extends Listener {
         if (!member.guild) return;
 
         // Fetch entry relating to action
-        let entry = await member.guild.find_entry('MEMBER_KICK', (e) => e.target.id === member.id && e.createdTimestamp > Date.now() - 1000 * 60);
+        let entry = await member.guild.find_entry(
+            'MEMBER_KICK',
+            e =>
+                e.target.id === member.id &&
+                e.createdTimestamp > Date.now() - 1000 * 60
+        );
         if (!entry) return;
 
         // Fetch entries (w/ entry prepended)
@@ -20,6 +25,5 @@ module.exports = class GuildMemberRemoveListener extends Listener {
 
         // Check limits
         member.guild.check_limits(entries, entry.executor.id, 'user_removals');
-
     }
-}
+};
