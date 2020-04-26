@@ -19,7 +19,9 @@ class RecentCommand extends Command {
             .setColor(0x7289da)
             .setTitle(
                 `Recent Actions in ${message.guild.name} ${
-                    args.ID && `by ${this.client.users.cache.get(args.ID).tag}`
+                    args.ID
+                        ? `by ${this.client.users.cache.get(args.ID).tag}`
+                        : ''
                 }`
             )
             .setDescription(
