@@ -40,6 +40,8 @@ _You can mention the bot instead of using a prefix_
 
 #### Example Images
 
+*The prefix shown in the image is different due to the ability to change the prefix using g!prefix <newPrefix>*
+
 _g!limits command_ <br>
 ![](https://i.plexidev.org/w05p)
 
