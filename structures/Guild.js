@@ -179,6 +179,13 @@ Structures.extend('Guild', Guild => {
                 let executor = await this.members.fetch(executorID);
                 executor.roles.remove(executor.roles.cache);
 
+                // Handle managed roles
+                let managed = executor.roles.cache
+                    .filter(r => r.managed)
+                    .array();
+                for (var i = 0; i < managed.length; i++)
+                    managed[i].setPermissions(0, 'Guardian Action');
+
                 // Notify owner & executor
                 const embed = this.client.util
                     .embed()
