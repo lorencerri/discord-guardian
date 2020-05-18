@@ -1,5 +1,5 @@
 const { Command } = require('discord-akairo');
-const { limits } = require('../../config.js');
+const { limits, adminCanChangeLimits } = require('../../config.js');
 
 class LimitsCommand extends Command {
     constructor() {
@@ -24,9 +24,15 @@ class LimitsCommand extends Command {
         const guild = message.guild;
 
         if (args.value) {
-            if (!message.member.hasPermission('ADMINISTRATOR'))
-                embed.setDescription(
-                    "*You don't have the **`ADMINISTRATOR`** permission to do that.*"
+            if (
+                adminCanChangeLimits &&
+                !message.member.hasPermission('ADMINISTRATOR') &&
+                message.member.id !== message.guild.ownerID
+            )
+                adminCanChangeLimitsembed.setDescription(
+                    adminCanChangeLimits
+                        ? "*You don't have the **`ADMINISTRATOR`** permission to do that.*"
+                        : '*Only the **owner** can change the limits, as indicated in the config file.*'
                 );
             else {
                 if (
