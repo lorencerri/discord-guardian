@@ -42,6 +42,8 @@ _You can mention the bot instead of using a prefix_
 
 **`g!recent [ID]`** Displays recent moderation actions that can trigger the bot's limits
 
+**`g!log [#channel]`** Assigns the logging channel for actions and limit changing
+
 ---
 
 #### Example Images
