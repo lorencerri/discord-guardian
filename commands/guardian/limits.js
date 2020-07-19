@@ -69,11 +69,11 @@ class LimitsCommand extends Command {
                         .setColor(0x7289da);
                     await loggingChannel.send(
                         loggingEmbed.setDescription(
-                            `*${this.client.Utils.toProperCase(
+                            `${this.client.Utils.toProperCase(
                                 key
                             )} per ${duration} has been changed to **\`${
                                 args.value
-                            }\`**.* by ${message.author}`
+                            }\`** by ${message.author}`
                         )
                     );
                 }
