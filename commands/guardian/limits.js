@@ -29,7 +29,7 @@ class LimitsCommand extends Command {
                 !message.member.hasPermission('ADMINISTRATOR') &&
                 message.member.id !== message.guild.ownerID
             )
-                adminCanChangeLimitsembed.setDescription(
+                embed.setDescription(
                     adminCanChangeLimits
                         ? "*You don't have the **`ADMINISTRATOR`** permission to do that.*"
                         : '*Only the **owner** can change the limits, as indicated in the config file.*'
@@ -58,6 +58,25 @@ class LimitsCommand extends Command {
                         args.value
                     }\`**.*`
                 );
+
+                const loggingChannel = message.guild.resolveChannel(
+                    message.guild.get(`loggingChannelID`)
+                );
+
+                if (loggingChannel) {
+                    const loggingEmbed = this.client.util
+                        .embed()
+                        .setColor(0x7289da);
+                    await loggingChannel.send(
+                        loggingEmbed.setDescription(
+                            `${this.client.Utils.toProperCase(
+                                key
+                            )} per ${duration} has been changed to **\`${
+                                args.value
+                            }\`** by ${message.author}`
+                        )
+                    );
+                }
             }
         }
 

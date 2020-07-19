@@ -14,13 +14,19 @@ Guardian allows server owners to set strict limits on administration actions. Th
 
 _Requires Node v12 for discord.js_
 
-**1.** Add `BOT_TOKEN` property to a .env file
+**1.** Download or clone this repository
 
-**2.** Configure `config.js` to your personal preferences
+**2.** Install required dependencies using `npm install` within the repository folder
 
-**3.** Run `npm start` to start the bot
+**3.** Create a .env file and add `BOT_TOKEN=<TOKEN>` to it. (Replace \<TOKEN\> with your TOKEN)
 
-**4.** Ensure the highest role the bot has is higher than others so it can remove their roles
+**4.** Configure `config.js` to your personal preferences
+
+**5.** Run `npm start` to start the bot
+
+**6.** Ensure the highest role the bot has is higher than others so it can remove their roles
+
+If you have any questions, feel free to either ask me on [Twitter](https://twitter.com/truexpixels) or [Discord](https://discord.gg/plexidev).
 
 ---
 
@@ -40,7 +46,7 @@ _You can mention the bot instead of using a prefix_
 
 #### Example Images
 
-*The prefix shown in the images are different due to the ability to change the prefix using `g!prefix newPrefix`*
+_The prefix shown in the images are different due to the ability to change the prefix using `g!prefix newPrefix`_
 
 _g!limits command_ <br>
 ![](https://i.plexidev.org/w05p)
