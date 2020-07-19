@@ -18,7 +18,7 @@ _Requires Node v12 for discord.js_
 
 **2.** Install required dependencies using `npm install` within the repository folder
 
-**3.** Create a .env file and add `BOT_TOKEN=<TOKEN>` to it. (Replace <TOKEN> with your TOKEN)
+**3.** Create a .env file and add `BOT_TOKEN=<TOKEN>` to it. (Replace \<TOKEN\> with your TOKEN)
 
 **4.** Configure `config.js` to your personal preferences
 
