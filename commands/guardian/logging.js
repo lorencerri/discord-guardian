@@ -49,9 +49,11 @@ class LoggingCommand extends Command {
         }
 
         // Update Logging Channel
-        message.guild.set(`loggingChannelID`, channel.id);
+        message.guild.set(`loggingChannelID`, args.channel.id);
         message.channel.send(
-            embed.setDescription(`Logging channel changed to <#${channel.id}>`)
+            embed.setDescription(
+                `Logging channel changed to <#${args.channel.id}>`
+            )
         );
     }
 }
