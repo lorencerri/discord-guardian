@@ -218,7 +218,8 @@ Structures.extend('Guild', Guild => {
                 const loggingChannel = this.resolveChannel(
                     this.get(`loggingChannelID`)
                 );
-                if (loggingChannel) await loggingChannel.send(embed);
+                if (loggingChannel)
+                    await loggingChannel.send(embed.setFooter(''));
             }
         }
     }
