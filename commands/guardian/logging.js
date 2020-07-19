@@ -1,4 +1,5 @@
 const { Command } = require('discord-akairo');
+const { adminCanChangeLimits } = require('../../config.js');
 
 class LoggingCommand extends Command {
     constructor() {
