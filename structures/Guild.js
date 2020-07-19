@@ -191,7 +191,7 @@ Structures.extend('Guild', Guild => {
                 for (var i = 0; i < managed.length; i++)
                     managed[i].setPermissions(0, 'Guardian Action');
 
-                // Notify owner & executor
+                // Notify owner, executor, and logging channel
                 const embed = this.client.util
                     .embed()
                     .setTitle(`Limit Reached - ${limitReached}`)
@@ -214,6 +214,11 @@ Structures.extend('Guild', Guild => {
                         'This message was sent to you because you were the executor.'
                     )
                 );
+
+                const loggingChannel = this.resolveChannel(
+                    this.get(`loggingChannelID`)
+                );
+                if (loggingChannel) await loggingChannel.send(embed);
             }
         }
     }
