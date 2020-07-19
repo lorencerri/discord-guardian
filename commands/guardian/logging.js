@@ -2,8 +2,8 @@ const { Command } = require('discord-akairo');
 
 class LoggingCommand extends Command {
     constructor() {
-        super('limits', {
-            aliases: ['limits', 'limit'],
+        super('logging', {
+            aliases: ['logging', 'log'],
             args: [
                 {
                     id: 'channel',
