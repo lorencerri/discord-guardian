@@ -24,6 +24,11 @@ Structures.extend('Guild', Guild => {
             return this.client.db.delete(`${this.id}_${key}`);
         }
 
+        resolveChannel(channelID) {
+            const channel = this.channels.cache.get(channelID);
+            return channel;
+        }
+
         get limits() {
             var obj = {};
             for (var k in limits) {

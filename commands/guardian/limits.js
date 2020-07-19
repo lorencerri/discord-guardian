@@ -29,7 +29,7 @@ class LimitsCommand extends Command {
                 !message.member.hasPermission('ADMINISTRATOR') &&
                 message.member.id !== message.guild.ownerID
             )
-                adminCanChangeLimitsembed.setDescription(
+                embed.setDescription(
                     adminCanChangeLimits
                         ? "*You don't have the **`ADMINISTRATOR`** permission to do that.*"
                         : '*Only the **owner** can change the limits, as indicated in the config file.*'
