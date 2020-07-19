@@ -41,9 +41,9 @@ class LoggingCommand extends Command {
             return message.channel.send(
                 embed.setDescription(
                     (loggingChannel
-                        ? `Currently logging in <#${loggingChannel.id}>`
-                        : '') +
-                        'Please mention a channel following the command.'
+                        ? `Currently logging in <#${loggingChannel.id}>, m`
+                        : 'M') +
+                        'ention a channel following the command to change the logging channel.'
                 )
             );
         }
