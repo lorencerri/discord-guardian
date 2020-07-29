@@ -16,7 +16,7 @@ class ResetCommand extends Command {
 
     async exec(message, args) {
         if (!message.member.hasPermission('ADMINISTRATOR'))
-            message.channel.send('***Sorry**, invalid permissions.*');
+            return message.channel.send('***Sorry**, invalid permissions.*');
 
         switch ((args.type || '').toLowerCase()) {
             case 'limits':
