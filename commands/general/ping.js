@@ -8,12 +8,7 @@ class PingCommand extends Command {
     }
 
     async exec(message) {
-        const sent = await message.channel.send('Calculating...');
-        return sent.edit(
-            `Latency: **\`${
-                sent.createdTimestamp - message.createdTimestamp
-            }ms\`**`
-        );
+        return message.channel.send(`Latency: **\`${this.client.ws.ping}ms\`**`);
     }
 }
 
