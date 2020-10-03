@@ -26,7 +26,7 @@ _Requires Node v12 for discord.js_
 
 **6.** Ensure the highest role the bot has is higher than others so it can remove their roles
 
-If you have any questions, feel free to either ask me on [Twitter](https://twitter.com/truexpixels) or [Discord](https://discord.gg/plexidev).
+If you have any questions, feel free to either ask me on [Twitter](https://twitter.com/lorencerri) or [Discord](https://discord.gg/plexidev).
 
 ---
 
