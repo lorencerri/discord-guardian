@@ -24,8 +24,6 @@ _Requires Node v12 for discord.js_
 
 If you have any questions, feel free to either ask me on [Twitter](https://twitter.com/lorencerri) or [Discord](https://discord.gg/plexidev).
 
----
-
 ## Commands
 
 _You can mention the bot instead of using a prefix_
@@ -40,23 +38,21 @@ _You can mention the bot instead of using a prefix_
 
 **`g!log [#channel]`** Assigns the logging channel for actions and limit changing
 
----
-
 ## Example Images
 
 <details>
-  <summary> Click to expand </summary>
-  
-  _The prefix shown in the images are different due to the ability to change the prefix using `g!prefix newPrefix`_
+    <summary> Click to expand </summary>
 
-  _g!limits command_ <br>
-  ![](https://i.plexidev.org/w05p)
+    _The prefix shown in the images are different due to the ability to change the prefix using `g!prefix newPrefix`_
 
-  _Image of a limit reached notification_ <br>
-  ![](https://i.plexidev.org/gVYq)
+    _g!limits command_ <br>
+    ![](https://i.plexidev.org/w05p)
 
-  _g!recent command_ <br>
-  ![](https://i.plexidev.org/nfMD)
+    _Image of a limit reached notification_ <br>
+    ![](https://i.plexidev.org/gVYq)
+
+    _g!recent command_ <br>
+    ![](https://i.plexidev.org/nfMD)
 </details>
 
 <a href="https://www.buymeacoffee.com/lorencerri" target="_blank"><img src="https://www.buymeacoffee.com/assets/img/custom_images/orange_img.png" alt="Buy Me A Coffee" style="height: 41px !important;width: 174px !important;box-shadow: 0px 3px 2px 0px rgba(190, 190, 190, 0.5) !important;-webkit-box-shadow: 0px 3px 2px 0px rgba(190, 190, 190, 0.5) !important;" ></a>
