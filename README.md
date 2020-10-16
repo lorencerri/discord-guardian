@@ -1,16 +1,8 @@
 # Guardian
 
-Guardian, a purpose built anti-nuke Discord bot.
-
----
-
-#### How Guardian Works
-
 Guardian allows server owners to set strict limits on administration actions. These actions include: bans, kicks, channel creations/deletions, and role creations/deletions. Once these limits are met, their Discord permissions are automatically revoked via removing all of their roles.
 
----
-
-#### Setup
+## Setup
 
 _Requires Node v12 for discord.js_
 
@@ -30,7 +22,7 @@ If you have any questions, feel free to either ask me on [Twitter](https://twitt
 
 ---
 
-#### Commands
+## Commands
 
 _You can mention the bot instead of using a prefix_
 
@@ -46,7 +38,7 @@ _You can mention the bot instead of using a prefix_
 
 ---
 
-#### Example Images
+## Example Images
 
 _The prefix shown in the images are different due to the ability to change the prefix using `g!prefix newPrefix`_
 
