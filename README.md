@@ -57,4 +57,4 @@ _g!recent command_ <br>
 ![](https://i.plexidev.org/nfMD)
 </details>
 
-## Thanks for reading! 😊
+*Thanks for reading! 😊*
