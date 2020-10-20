@@ -42,9 +42,6 @@ _You can mention the bot instead of using a prefix_
 
 ## Example Images
 
-<details>
-<summary> Click to expand </summary>
-
 _The prefix shown in the images are different due to the ability to change the prefix using `g!prefix newPrefix`_
 
 _g!limits command_ <br>
@@ -55,6 +52,5 @@ _Image of a limit reached notification_ <br>
 
 _g!recent command_ <br>
 ![](https://i.plexidev.org/nfMD)
-</details>
 
 *Thanks for reading! 😊*
