@@ -10,7 +10,7 @@ Guardian allows server owners to set strict limits on administration actions. Th
 
 ## Setup
 
-_Requires Node v12 for discord.js_
+_Requires [Node.js](nodejs.org) v12 or higher_
 
 **1.** Download or clone this repository
 
