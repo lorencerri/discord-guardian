@@ -53,4 +53,4 @@ _Image of a limit reached notification_ <br>
 _g!recent command_ <br>
 ![](https://i.plexidev.org/nfMD)
 
-*Thanks for reading! 😊*
+*Thanks for reading! Feel free to star this repo if you've found it useful 😊*
