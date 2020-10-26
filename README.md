@@ -1,10 +1,10 @@
 ## Guardian
 
-Guardian allows server owners to set strict limits on administration actions. These actions include: bans, kicks, channel creations/deletions, and role creations/deletions. Once these limits are met, their Discord permissions are automatically revoked via removing all of their roles.
+Guardian allows server owners to set strict limits on administration actions. These actions include: bans, kicks, channel creations/deletions, and role creations/deletions. Once someone meets any of these limits, their Discord permissions are automatically revoked via removing all of their roles.
 
 ## Hey There 👋
 
-I work on this project in my spare time, if you'd like to support me, you can do so by [buying me a coffee! ❤️](https://www.buymeacoffee.com/lorencerri)
+I work on this project in my spare time, if you'd like to support me, you can do so [here! ❤️](https://www.buymeacoffee.com/lorencerri)
 
 *Need a custom Discord bot or project completed? Feel free to send me a message on [Discord](https://discord.gg/plexidev) (lorencerri#2113) or [Twitter](https://twitter.com/lorencerri)!*
 
