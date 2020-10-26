@@ -8,6 +8,10 @@ I work on this project in my spare time, if you'd like to support me, you can do
 
 *Need a custom Discord bot or project completed? Feel free to send me a message on [Discord](https://discord.gg/plexidev) (lorencerri#2113) or [Twitter](https://twitter.com/lorencerri)!*
 
+## Suggesting Features
+
+Please suggest features via the [issues](https://github.com/lorencerri/discord-guardian) page. Alternatively, you can send me a message on [Twitter](https://twitter.com/lorencerri).
+
 ## Setup
 
 _Requires [Node.js](nodejs.org) v12 or higher_
