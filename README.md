@@ -4,7 +4,7 @@ Guardian allows server owners to set strict limits on administration actions. Th
 
 ## Hey There 👋
 
-I work on this project in my spare time, if you'd like to support me, you can do so [here! ❤️](https://www.buymeacoffee.com/lorencerri)
+I work on this project in my spare time, if you'd like to support me, you can do so [here!](https://www.buymeacoffee.com/lorencerri) *Starring this project on GitHub is also greatly appreciated* ❤️
 
 *Need a custom Discord bot or project completed? Feel free to send me a message on [Discord](https://discord.gg/plexidev) (lorencerri#2113) or [Twitter](https://twitter.com/lorencerri)!*
 
