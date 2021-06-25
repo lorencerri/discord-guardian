@@ -27,7 +27,7 @@ _Requires [Node.js](nodejs.org) v12 or higher_
 
 **2.** Install required dependencies using `npm install` within the repository folder
 
-**3.** Create a .env file and add `BOT_TOKEN=<TOKEN>` to it. (Replace \<TOKEN\> with your TOKEN)
+**3.** Create a .env file at the root level of the project and add `BOT_TOKEN=<TOKEN>` to it. (Replace \<TOKEN\> with your TOKEN)
 
 **4.** Configure `config.js` to your personal preferences
 
