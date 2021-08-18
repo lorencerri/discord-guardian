@@ -1,3 +1,5 @@
+> **A rewrite is currently in progress! The new update will utilize all of Discord's new features (Buttons, User Contexts, etc.) and comply with their upcoming changes (slash commands).**
+
 ## Guardian
 
 Guardian allows server owners to set strict limits on administration actions. These actions include: bans, kicks, channel creations/deletions, and role creations/deletions. Once someone meets any of these limits, their Discord permissions are automatically revoked via removing all of their roles.
