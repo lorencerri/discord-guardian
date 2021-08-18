@@ -1,6 +1,6 @@
-> 🎉🎉 **A rewrite is currently in progress! The new update will utilize all of Discord's new features (Buttons, User Contexts, etc.) and comply with their upcoming changes (slash commands).** 🎉🎉 
-> 
-> **Give the repo a ⭐ to stay up to date for when it drops!**
+> 🎉🎉 **This branch is currently being rewritten! Expect errors while in development, please use the issues tab to report them.** 🎉🎉
+>
+> **Give the repo a ⭐ to stay up to date on updates!**
 
 ## Guardian
 
@@ -9,15 +9,16 @@ Guardian allows server owners to set strict limits on administration actions. Th
 ## Custom Hosting
 
 Want this bot hosted for you? Send me a message on either **[Discord](https://discord.gg/plexidev)** (lorencerri#2113) or **[Twitter](https://twitter.com/lorencerri)**!
-> - Custom Username, Avatar, & Status
-> - Fast-tracked Feature Requests
-> - Independent Hosting (better performance)
+
+> -   Custom Username, Avatar, & Status
+> -   Fast-tracked Feature Requests
+> -   Independent Hosting (better performance)
 
 ## Hey There 👋
 
 I work on these projects in my spare time, if you'd like to support me, you can do so via [Patreon! ❤️](https://www.patreon.com/lorencerri)
 
-*Need a custom Discord bot or project completed? Feel free to send me a message on [Discord](https://discord.gg/plexidev) (lorencerri#2113) or [Twitter](https://twitter.com/lorencerri)!*
+_Need a custom Discord bot or project completed? Feel free to send me a message on [Discord](https://discord.gg/plexidev) (lorencerri#2113) or [Twitter](https://twitter.com/lorencerri)!_
 
 ## Suggesting Features
 
@@ -68,4 +69,4 @@ _Image of a limit reached notification_ <br>
 _g!recent command_ <br>
 ![](https://i.plexidev.org/nfMD)
 
-*Thanks for reading! Feel free to star this repo if you've found it useful 😊*
+_Thanks for reading! Feel free to star this repo if you've found it useful 😊_
