@@ -1,4 +1,4 @@
-> 🎉🎉 **A rewrite is currently in progress! The new update will utilize all of Discord's new features (Buttons, User Contexts, etc.) and comply with their upcoming changes (slash commands).** 🎉🎉
+> 🎉🎉 **A rewrite is currently in progress! The new update will utilize all of Discord's new features (Buttons, User Contexts, etc.) and comply with their upcoming changes (slash commands). __Give the repo a star to stay up to date for when it drops!__** 🎉🎉
 
 ## Guardian
 
