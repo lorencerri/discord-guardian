@@ -17,7 +17,10 @@
         "url": "https://github.com/plexidev/discord-guardian/issues"
     },
     "homepage": "https://github.com/plexidev/discord-guardian#readme",
-    "dependencies": {},
+    "dependencies": {
+        "@ayanaware/logger": "^2.2.1",
+        "dotenv": "^10.0.0"
+    },
     "devDependencies": {
         "babel-eslint": "10.1.0",
         "eslint": "7.8.1",
