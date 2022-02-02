@@ -8,6 +8,7 @@ Guardian allows server owners to set strict limits on administration actions. Th
 - Web dashboard
 - Better setup and maintenance flow
 - Improved reaction customizability
+- TTL db entries that won't bloat the database
 
 ## Suggesting Features
 
