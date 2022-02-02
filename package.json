@@ -5,17 +5,18 @@
     "main": "index.js",
     "scripts": {
         "test": "echo \"Error: no test specified\" && exit 1",
-        "start": "node index.js"
+        "start": "node index.js",
+        "setup": "npm install && node setup.js"
     },
     "repository": {
         "type": "git",
-        "url": "git+https://github.com/plexidev/discord-guardian.git"
+        "url": "git+https://github.com/lorencerri/discord-guardian.git"
     },
     "author": "",
     "license": "MIT",
     "bugs": {
-        "url": "https://github.com/plexidev/discord-guardian/issues"
+        "url": "https://github.com/lorencerri/discord-guardian/issues"
     },
-    "homepage": "https://github.com/plexidev/discord-guardian#readme",
+    "homepage": "https://github.com/lorencerri/discord-guardian#readme",
     "dependencies": {}
 }
