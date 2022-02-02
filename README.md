@@ -41,6 +41,11 @@ _You can mention the bot instead of using a prefix_
 
 **`g!log [#channel]`** Assigns the logging channel for actions and limit changing
 
+## Stack
+- Sapphire.js (Discord Bot)
+- Keyv (Client Database)
+- Svelte (Web Dashboard)
+
 ## Example Images
 
 *Thanks for reading! Feel free to star this repo if you've found it useful 😊*
