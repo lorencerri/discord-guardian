@@ -1,19 +1,36 @@
+import '@sapphire/plugin-logger/register';
+
+import { error, success, verifyEnv } from './helpers.js';
 import { GatewayIntentBits } from 'discord-api-types/v9'
-import { SapphireClient } from '@sapphire/framework'
+import { SapphireClient, container } from '@sapphire/framework'
 import { Constants } from 'discord.js'
+import dotenv from 'dotenv';
+import Keyv from 'keyv';
 
 const init = async () => {
 
-	// Verify .env
+	const env = dotenv.config();
+	if (verifyEnv(env) !== 200) return;
 
-	// Initialize Client
+	const client = new SapphireClient({
+		loadMessageCommandListeners: true,
+		enableLoaderTraceLoggings: true,
+		intents: GatewayIntentBits.Guilds,
+		partials: [Constants.PartialTypes.CHANNEL],
+		disableMentions: 'everyone'
+	});
 
-	// Attempt Logging In
+	try {
+		await client.login(env.parsed["DISCORD_TOKEN"]);
+		success('Successfully Logged In');
+	} catch (e) {
+		error(e.message);
+		client.destroy();
+		process.exit(1);
+	}
 
-	// Catch Errors
-
-	// Initialize Database
+	container.keyv = new Keyv('sqlite://database.sqlite');
 
 }
 
-export { init }
+init();

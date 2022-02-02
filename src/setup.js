@@ -1,26 +1,16 @@
 import dotenv from 'dotenv';
-const { parsed, error: envError } = dotenv.config();
 
-import chalk from 'chalk';
+import { error, info, success, verifyEnv } from './helpers.js';
 import prompt from 'prompt-async';
 
 import Keyv from 'keyv';
 const keyv = new Keyv('sqlite://database.sqlite');
 
-const error = (message = '') => {
-	console.log(`${chalk.yellow(`[Setup]`)} ${chalk.red(`[ERROR] ${message}`)}`);
-}
-
-const info = (message = '') => {
-	console.log(`${chalk.yellow(`[Setup]`)} ${chalk.blue(`[INFO] ${message}`)}`);
-}
-
 const setup = async () => {
 	info(`Initializing Setup...`);
 	prompt.start();
 
-	if (envError) return error('Error loading .env file. Does it exist?');
-	if (!parsed["DISCORD_TOKEN"]) return error('DISCORD_TOKEN not found in .env file. Does it exist?');
+	if (verifyEnv(dotenv.config()) !== 200) return;
 
 	const { owner_id } = await prompt.get([{
 		name: 'owner_id',
@@ -31,6 +21,12 @@ const setup = async () => {
 	return 200;
 }
 
+const dashboard = async () => {
+	// TODO
+
+	// Assign Owner ID (Request if not found)
+}
+
 const resp = await setup();
 if (resp !== 200) error('Setup failed. If you need assistance, create an issue on the GitHub repo!')
-else info('Setup completed without any errors!');
+else success('Setup completed without any errors!');
