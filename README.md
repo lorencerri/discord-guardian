@@ -2,6 +2,14 @@
 
 Guardian allows server owners to set strict limits on administration actions. These actions include: bans, kicks, channel creations/deletions, and role creations/deletions. Once someone meets any of these limits, their Discord permissions are automatically revoked via removing all of their roles.
 
+## Additional Planned Features (Based on recent suggestions)
+- Additional Limits (Channel Updates, Role Updates, etc.)
+- Clear recent actions
+- Web dashboard
+- Better setup and maintenance flow
+- Improved reaction customizability
+- TTL db entries that won't bloat the database
+
 ## Suggesting Features
 
 Please suggest features via the [issues](https://github.com/lorencerri/discord-guardian) page. Alternatively, you can send me a message on [Twitter](https://twitter.com/lorencerri).
@@ -33,6 +41,11 @@ _You can mention the bot instead of using a prefix_
 **`g!recent [ID]`** Displays recent moderation actions that can trigger the bot's limits
 
 **`g!log [#channel]`** Assigns the logging channel for actions and limit changing
+
+## Stack
+- Sapphire.js (Discord Bot)
+- Keyv (Client Database)
+- Svelte (Web Dashboard)
 
 ## Example Images
 
