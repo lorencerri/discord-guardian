@@ -5,7 +5,7 @@ import { MessageEmbed } from 'discord.js';
 export class ContextMenuCommandDenied extends Listener<typeof Events.ContextMenuCommandDenied> {
 	public async run(error: UserError, { interaction }: ContextMenuCommandDeniedPayload) {
 		const embed = new MessageEmbed()
-			.setColor(0x2f4177)
+			.setColor(0x6d3737)
 			.setTitle('Context Menu Command Denied')
 			.setDescription(`**Message:**\n\`${error.message}\``);
 

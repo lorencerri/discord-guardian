@@ -1,6 +1,6 @@
 {
 	"name": "discord-guardian",
-	"version": "dev",
+	"version": "2.0.0",
 	"main": "dist/index.js",
 	"author": "lorencerri",
 	"license": "MIT",

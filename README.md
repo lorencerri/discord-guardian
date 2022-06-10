@@ -1,6 +1,8 @@
 ## Guardian v2
 
-This is a work in progress and is not yet ready for use.
+_Set ratelimits for specific actions (kicks, bans, channel deletions, etc.) within your server._
+
+> This is a work in progress and not yet ready for use.
 
 ### Installation
 
