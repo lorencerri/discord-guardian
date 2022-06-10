@@ -15,20 +15,12 @@ import { inspect } from 'util';
 })
 export class EvalCommand extends Command {
 	async clean(token = '', text = '') {
-		if (!text) throw new Error('Unable to parse result');
-
-		if (text && text.constructor.name == 'Promise') text = await text;
+		if (text.constructor.name == 'Promise') text = await text;
 		if (typeof text !== 'string')
 			text = require('util').inspect(text, {
 				depth: 1
 			});
-
-		text = text
-			.replace(/`/g, '`' + String.fromCharCode(8203))
-			.replace(/@/g, '@' + String.fromCharCode(8203))
-			.replace(token, '<TOKEN>');
-
-		return text;
+		return text.replace(/`/g, '`' + String.fromCharCode(8203)).replace(/@/g, '@' + String.fromCharCode(8203)).replace(token, '<TOKEN>');
 	}
 
 	private async eval(interaction: Command.ChatInputInteraction, code: string, flags: { depth: number; showHidden: boolean }) {
