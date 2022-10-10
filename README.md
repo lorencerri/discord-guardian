@@ -2,7 +2,7 @@
 > 
 > **Give the repo a ⭐ to stay up to date for when it drops!**
 
-## Guardian
+## ![Guardian Logo](https://www.plexidev.org/guardian.png)
 
 Guardian allows server owners to set strict limits on administration actions. These actions include: bans, kicks, channel creations/deletions, and role creations/deletions. Once someone meets any of these limits, their Discord permissions are automatically revoked via removing all of their roles.
 
